@@ -7,7 +7,7 @@
 # requires: swaylock, imagemagick, grim
 # swaylock parameters from: https://github.com/Big-B/swaylock-fancy
 
-grim /tmp/lock.png -q 100
+grim /tmp/lock.png -q 80
 convert /tmp/lock.png /tmp/lock.jpg
 file=/tmp/lock.jpg
 
@@ -52,7 +52,7 @@ do
 	fi
 done <<<"$(swaymsg -t get_outputs)"
 
-convert /tmp/lock.jpg /tmp/lock.png >/dev/null 2>&1
+convert -scale 10% -scale 1000% /tmp/lock.jpg /tmp/lock.png >/dev/null 2>&1
 rm /tmp/lock.jpg
 file=/tmp/lock.png
 
