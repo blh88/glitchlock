@@ -7,11 +7,7 @@
 
 glitchlock: a glitch art themed randomized lockscreen. powered by swaylock.
 
-![glitchlock preview](https://raw.githubusercontent.com/xero/glitchlock/master/preview.png)
-
-(note, the lock screen is **NOT** animated. this gif is meant to showcase it's random output)
-
-((also note, this shows the original i3lock-colour version which differs from this Wayland implementation))
+![glitchlock preview](https://raw.githubusercontent.com/crablab/glitchlock/master/preview.png)
 
 ## table of contents
 * [about](#about)
