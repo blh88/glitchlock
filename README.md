@@ -76,7 +76,7 @@ mod4 + Escape
 
 ## license
 
-Origial licence below. Wayland fork redistributed with the MIT licence (see LICENCE.md)
+Origial licence below. Wayland fork redistributed with the MIT licence (see LICENCE.md). Contains work from [swaylock-fancy](https://github.com/Big-B/swaylock-fancy) redistributed under the MIT licence (see LICENCE.md).
 
 ![kopimi logo](https://gist.githubusercontent.com/xero/cbcd5c38b695004c848b73e5c1c0c779/raw/6b32899b0af238b17383d7a878a69a076139e72d/kopimi-sm.png)
 
