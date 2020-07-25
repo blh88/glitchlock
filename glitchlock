@@ -7,7 +7,7 @@
 # requires: swaylock, imagemagick, grim
 # swaylock parameters from: https://github.com/Big-B/swaylock-fancy
 
-grim /tmp/lock.png
+grim /tmp/lock.png -q 100
 convert /tmp/lock.png /tmp/lock.jpg
 file=/tmp/lock.jpg
 
@@ -50,7 +50,7 @@ do
 			LOCK+=($GLITCHICON -geometry +$MIDXi+$MIDYi -composite)
 		fi
 	fi
-done <<<"$(xrandr)"
+done <<<"$(swaymsg -t get_outputs)"
 
 convert /tmp/lock.jpg /tmp/lock.png >/dev/null 2>&1
 rm /tmp/lock.jpg
