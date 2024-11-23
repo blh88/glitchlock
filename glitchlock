@@ -7,20 +7,20 @@
 # requires: swaylock, imagemagick, grim
 # swaylock parameters from: https://github.com/Big-B/swaylock-fancy
 
-grim /tmp/lock.png -q 80
-convert /tmp/lock.png /tmp/lock.jpg
+grim /tmp/lock.png
+magick /tmp/lock.png /tmp/lock.jpg
 file=/tmp/lock.jpg
 
 function datamosh() {
 	fileSize=$(wc -c < "$file")
 	headerSize=1000
 	skip=$(shuf -i "$headerSize"-"$fileSize" -n 1)
-	count=$(shuf -i 0-255 -n 1)
+	count=$(shuf -i 0-40 -n 1)
 	for i in $(seq 1 $count);do byteStr=$byteStr'\x'$(shuf -i 0-255 -n 1); done;   
 	printf $byteStr | dd of="$file" bs=1 seek=$skip count=$count conv=notrunc >/dev/null 2>&1
 }
 
-steps=$(shuf -i 40-70 -n 1)
+steps=$(shuf -i 20-30 -n 1)
 for i in $(seq 1 $steps);do datamosh "$file"; done
 
 GLITCHICON=${GLITCHICON:=""}
@@ -52,10 +52,10 @@ do
 	fi
 done <<<"$(swaymsg -t get_outputs)"
 
-convert -scale 10% -scale 1000% /tmp/lock.jpg /tmp/lock.png >/dev/null 2>&1
+magick /tmp/lock.jpg /tmp/lock.png >/dev/null 2>&1
 rm /tmp/lock.jpg
 file=/tmp/lock.png
 
-convert "$file" "${LOCK[@]}" "$file"
+magick "$file" "${LOCK[@]}" "$file"
 
 swaylock -n "${PARAM[@]}" -i "$file" > /dev/null 2>&1
